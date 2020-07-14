@@ -1,3 +1,4 @@
+import cors from "cors";
 import express, { Application, NextFunction, Request, Response } from "express";
 import { config } from "./config/index";
 import { CBD } from "./db/index";
@@ -9,6 +10,7 @@ import { usersRoutes } from "./routes/v1/users";
 const { app: appConfig, db } = config;
 const app: Application = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/v1", usersRoutes);

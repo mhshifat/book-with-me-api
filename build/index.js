@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var cors_1 = __importDefault(require("cors"));
 var express_1 = __importDefault(require("express"));
 var index_1 = require("./config/index");
 var index_2 = require("./db/index");
@@ -23,6 +24,7 @@ var rentals_1 = require("./routes/v1/rentals");
 var users_1 = require("./routes/v1/users");
 var appConfig = index_1.config.app, db = index_1.config.db;
 var app = express_1.default();
+app.use(cors_1.default());
 app.use(express_1.default.json());
 app.use("/api/v1", users_1.usersRoutes);
 app.use("/api/v1", rentals_1.rentalRoutes);
