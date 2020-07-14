@@ -42,7 +42,4 @@ CBD(db.MONGODB_URI)
       `[ BookWithMe ] The server is running on http://localhost:${appConfig.PORT}!`
     );
   })
-  .catch((err) => {
-    console.log(err);
-    process.exit();
-  });
+  .catch(() => process.exit());

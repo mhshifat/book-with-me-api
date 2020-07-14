@@ -48,7 +48,4 @@ index_2.CBD(db.MONGODB_URI)
     .then(function () {
     console.log("[ BookWithMe ] The server is running on http://localhost:" + appConfig.PORT + "!");
 })
-    .catch(function (err) {
-    console.log(err);
-    process.exit();
-});
+    .catch(function () { return process.exit(); });
